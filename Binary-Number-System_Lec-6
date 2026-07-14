@@ -1,0 +1,41 @@
+
+#include <iostream>
+using namespace std;
+
+int decTobin(int decNum){
+    int ans=0,rem=0,place=1;
+    while(decNum>0){
+    
+    rem = decNum%2;
+    decNum/=2;
+    ans+=rem*place;
+    place*=10;
+    
+    }
+    return ans;
+}
+
+int bintodec(int binNum){
+    int ans=0, place =1;
+    while(binNum>0){
+     int rem = binNum % 10;
+        binNum /= 10;
+         ans+=rem*place;
+        place *= 2;
+        
+    }
+    return ans;
+}
+
+int main() {
+    int decNum=1;
+cout<<"Decimal Number "<<decNum<< " in Binary Form is "<<decTobin(decNum);
+
+cout<<endl;
+
+    int binNum=110;
+cout<<" Binary Number "<<binNum<< " in Decimal Form is "<<bintodec(binNum); 
+
+
+    return 0;
+}
